@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" ng-app="app" ng-cloak>
+  <head>
+      <base href="/">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Angular-Gulp-Seed</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+      <base href="/" />
+      <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
+      <!--Use this format for gulp task useref to minify all stylesheets to compress into one -->
+
+      <!--build:css css/main.min.css-->      
+      
+      <link rel="stylesheet" href="css/main.css">
+
+      <!-- endbuild -->
+
+      <!--build:css css/vendor.min.css-->
+      
+      <!-- Include Vendor css files here -->
+
+      <!-- endbuild -->
+  </head>
+  <body>
+      
+      <h1>Hi, This is an Angular-gulp-seed project.</h1>
+      <a href='#/sample1'> Sample View 1 </a>&nbsp
+      <a href='#/sample2'> Sample View 2 </a>
+      <hr>
+      <div ui-view>
+        
+      </div>  
+      
+      
+      <!-- Include all vendor js in here -->
+
+      <!--build:js js/vendor.min.js-->
+
+      <script src="/bower_components/angular/angular.js"></script>
+      <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="/bower_components/angular-messages/angular-messages.min.js"></script>
+
+      <!-- endbuild -->
+      
+
+      <!-- Include all user js in here -->
+
+      <!--build:js js/main.min.js -->
+      <script src='js/main.js'></script>
+      <script src="js/main.config.js"></script>
+      <script src="js/main.services.js"></script>
+      <script src="js/main.filters.js"></script>
+      <script src="js/main.directives.js"></script>
+      <script src="js/main.controllers.js"></script>
+      <!-- endbuild -->
+
+      
+  </body>
+</html>
