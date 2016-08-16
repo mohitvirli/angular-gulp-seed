@@ -17,7 +17,7 @@ To get you started you can simply clone the angular-seed repository and install 
 Clone the angular-seed repository using the command and change the directory to the root folder.
 
 ```
-git clone https://github.com/angular/angular-seed.git
+git clone https://github.com/mohitvirli/angular-gulp-seed.git
 cd angular-gulp-seed
 ```
 
