@@ -54,23 +54,17 @@ The command for this is "gulp build".
 //Check index.html for sample
 //Have a look at the documentation of useref for more information
 
-gulp.task('js', function(){
+gulp.task('useref', function(){
     return gulp.src('app/*.html')
         .pipe(useref())
         //Uses annotation for possible injection errors
         .pipe(gulpIf('*.js', ngAnnotate()))
         // Minifies only if it's a JavaScript file
         .pipe(gulpIf('*.js', uglify()))
+        .pipe(gulpIf('*.css', cssnano()))
         .pipe(gulp.dest('dist'))
 });
 
-//This is a sub-task used to minify CSS files using cssnano
-gulp.task('css', function() {     
-    return gulp.src('app/css/*')
-        // Minifies only if it's a CSS file
-        .pipe(gulpIf('*.css', cssnano()))
-        .pipe(gulp.dest('dist/styles')); 
-});
 
 //This sub-task cleans the distribution folder everytime before "gulp build is used"
 gulp.task('clean:dist', function() {
@@ -97,7 +91,7 @@ gulp.task('fonts', function() {
 
 //This sub-task pipes the index.html and the icons to the dist folder
 gulp.task('index', function() {
-    return gulp.src(['app/*.html','app/*.png'])
+    return gulp.src('app/*.png')
         .pipe(gulp.dest('dist/'));
 });
 
@@ -110,7 +104,7 @@ It uses runSequence to run all the gulp sub-tasks in sequence.
 ****************************************/
 
 gulp.task('build', function(callback) {
-    runSequence('clean:dist', ['js', 'css', 'images', 'views', 'index'],
+    runSequence('clean:dist', ['useref', 'images', 'views', 'index'],
         callback
     );
 });
